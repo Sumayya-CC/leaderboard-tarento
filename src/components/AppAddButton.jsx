@@ -10,7 +10,7 @@ export default class AppAddButton extends React.Component {
     render(){
         return (
 <div>
-      <Fab color="primary" aria-label="add">
+      <Fab color="primary" aria-label="add" onClick={this.props.handleClick}>
         <AddIcon />
       </Fab>    
 </div>   )
