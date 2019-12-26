@@ -2,8 +2,10 @@ import React from 'react';
 import AddTeam from './AddTeam'
 import AppAddButton from './AppAddButton'
 import AppAddButtonRight from './AppButtonRightLabel'
+import AppTeamList from './AppTeamList'
 import AddMember from './AddMember'
 import Label from './AppLabel'
+import Grid from "@material-ui/core/Grid";
 
 export default class Teams extends React.Component {
     constructor(props) {
@@ -14,7 +16,7 @@ export default class Teams extends React.Component {
         }
     }
 
-    handleAddMember(){
+    handleAddMember() {
         this.setState({
             showMember: true
         })
@@ -28,23 +30,30 @@ export default class Teams extends React.Component {
 
     render() {
         return (<div>
-            {this.state.showMember &&
-                <AddMember />
-            }
-            {this.state.showTeam &&
-                <div>
-                    <AddTeam />
-                </div>
-            }
-            {!this.state.showMember &&
-                <AppAddButtonRight handleClick={this.handleAddMember.bind(this)}/>
-            }
-            {!this.state.showTeam &&
-                <div>
-                    <AppAddButton handleClick={this.handleClick.bind(this)} />
-                    <Label label="Add Team" />
-                </div>
-            }
+            <Grid container spacing={24} >
+                <Grid item xs={2} sm={2} md={2} xl={2} lg={2} >
+                    <AppTeamList />
+                    {this.state.showMember &&
+                        <AddMember />
+                    }
+                    {!this.state.showMember &&
+                        <AppAddButtonRight handleClick={this.handleAddMember.bind(this)} />
+                    }
+                </Grid>
+                <Grid item xs={2} sm={2} md={2} xl={2} lg={2} >
+                    {this.state.showTeam &&
+                        <div>
+                            <AddTeam />
+                        </div>
+                    }
+                    {!this.state.showTeam &&
+                        <div>
+                            <AppAddButton handleClick={this.handleClick.bind(this)} />
+                            <Label label="Add Team" />
+                        </div>
+                    }
+                </Grid>
+            </Grid>
         </div>)
     }
 }
