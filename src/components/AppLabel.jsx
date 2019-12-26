@@ -5,8 +5,8 @@ export default class AppLabel extends React.Component {
 
     render(){
         return (
-            <Typography variant="h5" gutterBottom style={{color: 'blue'}}>
-            Team Yellow
+            <Typography variant="h5" gutterBottom>
+            {this.props.label}
           </Typography>   
         )
     }
