@@ -1,6 +1,7 @@
 import React from 'react';
 import AddTeam from './AddTeam'
 import AppAddButton from './AppAddButton'
+import Label from './AppLabel'
 
 export default class Teams extends React.Component {
     constructor(props) {
@@ -22,7 +23,10 @@ export default class Teams extends React.Component {
                 <AddTeam />
             }
             {!this.state.showTeam &&
-                <AppAddButton handleClick={this.handleClick.bind(this)} />
+                <div>
+                    <AppAddButton handleClick={this.handleClick.bind(this)} />
+                    <Label label="Add Team"/>
+                </div>
             }
         </div>)
     }
