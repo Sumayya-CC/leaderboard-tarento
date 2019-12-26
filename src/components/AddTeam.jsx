@@ -7,10 +7,10 @@ export default class AddTeam extends React.Component {
         return (
             <div>
                 <div>
-                    <TextField />
+                    <TextField changeHandler={this.props.changeHandler}/>
                 </div>
                 <div>
-                    <Button />
+                    <Button clickHandler={this.props.handleSave}/>
                 </div>
             </div>
         )

@@ -6,7 +6,7 @@ export default class AppTextField extends React.Component {
 
     render(){
         return (
-            <TextField id="standard-basic" label="Team Name" />
+            <TextField id="standard-basic" label="Team Name" onChange={this.props.changeHandler}/>
             
         )
     }
