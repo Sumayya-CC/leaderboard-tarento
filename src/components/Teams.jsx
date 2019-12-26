@@ -69,7 +69,7 @@ export default class Teams extends React.Component {
             <Grid container spacing={24} >
                 {teams && Array.isArray(teams) && teams.length > 0 ?
                     teams.map((team) => {
-                        return <Grid item xs={2} sm={2} md={2} xl={2} lg={2} >
+                        return <Grid item xs={2} sm={2} md={2} xl={2} lg={2} style={{marginBottom: '5%'}}>
                             <AppTeamList team={team} />
                             {this.state.showMember &&
                                 <AddMember />
