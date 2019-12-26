@@ -22,6 +22,13 @@ export default class Test extends React.Component {
    <td>BLUE</td>
    <td>67</td>
    </tr>
+
+   <tr>
+   <td>GREEN</td>
+   <td>67</td>
+   </tr>
+
 </table>   </div>   )
     }
 }
+
