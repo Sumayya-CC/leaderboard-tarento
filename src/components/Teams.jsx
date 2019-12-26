@@ -1,7 +1,10 @@
 import React from 'react';
+import AddTeam from './AddTeam'
 
 export default class Teams extends React.Component {
     render(){
-        return (<div>Hello</div>)
+        return (<div>
+            <AddTeam />
+        </div>)
     }
 }
