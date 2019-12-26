@@ -42,18 +42,22 @@ export default class Teams extends React.Component {
         })
     }
 
-    handleSave(){
+    handleSave() {
         var self = this;
-        axios.post('http://172.17.18.41:8081/team/addTeam',{teamName: self.teamName})
-        .then(function (response) {
-            self.componentDidMount()
-        })
-        .catch(function (error) {
-            console.log(error);
-        });
+        console.log(self.state.teamName)
+        axios.post('http://172.17.18.41:8081/team/addTeam', { "teamName": self.state.teamName })
+            .then(function (response) {
+                self.componentDidMount()
+                self.setState({
+                    showTeam: false
+                })
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
     }
 
-    changeHandler(event){
+    changeHandler(event) {
         this.setState({
             teamName: event.target.value
         })
@@ -66,7 +70,7 @@ export default class Teams extends React.Component {
                 {teams && Array.isArray(teams) && teams.length > 0 ?
                     teams.map((team) => {
                         return <Grid item xs={2} sm={2} md={2} xl={2} lg={2} >
-                            <AppTeamList team={team}/>
+                            <AppTeamList team={team} />
                             {this.state.showMember &&
                                 <AddMember />
                             }
@@ -81,7 +85,7 @@ export default class Teams extends React.Component {
                 <Grid item xs={2} sm={2} md={2} xl={2} lg={2} >
                     {this.state.showTeam &&
                         <div>
-                            <AddTeam changeHandler={this.changeHandler.bind(this)} handleSave={this.handleSave.bind(this)}/>
+                            <AddTeam changeHandler={this.changeHandler.bind(this)} handleSave={this.handleSave.bind(this)} />
                         </div>
                     }
                     {!this.state.showTeam &&
