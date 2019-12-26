@@ -5,7 +5,7 @@ import AddIcon from '@material-ui/icons/Add';
 
 
 
-export default class Test extends React.Component {
+export default class AppAddButton extends React.Component {
 
     render(){
         return (
