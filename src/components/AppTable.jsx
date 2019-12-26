@@ -7,9 +7,11 @@ export default class Test extends React.Component {
 
     render(){
         return (
+            
             <div>
-   
- <table >
+ 
+ <table border = "1" width = "400" height = "150">
+     
  <tr>
    <th>TEAM</th>
    <th>SCORE</th>
