@@ -4,6 +4,7 @@ import AppTab from '../components/AppTab'
 import Teams from '../components/Teams'
 import theme from '../theme/default'
 import { ThemeProvider } from '@material-ui/core/styles';
+import Score from '../components/Score';
 
 export default class Home extends React.Component {
     render() {
@@ -16,7 +17,7 @@ export default class Home extends React.Component {
                             tabList={['TEAM', 'SCORE']}
                             tabContent={[
                                 <Teams />,
-                                <Teams />
+                                <Score />
                             ]}
                         />
                     </div>
